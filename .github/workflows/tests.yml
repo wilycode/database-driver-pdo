@@ -24,7 +24,8 @@ jobs:
         run: composer validate --strict
 
       - name: Verify SQLite PDO driver
-        run: php -r "exit(in_array('sqlite', PDO::getAvailableDrivers(), true) ? 0 : 1);"
+        run: |
+          php -r "exit(in_array('sqlite', PDO::getAvailableDrivers(), true) ? 0 : 1);"
 
       - name: Install dependencies
         run: composer install --no-interaction --prefer-dist --no-progress
