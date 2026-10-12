@@ -1,0 +1,33 @@
+name: Tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  phpunit:
+    name: PHP 8.4 / SQLite
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          extensions: pdo, pdo_sqlite
+          tools: composer:v2
+          coverage: none
+
+      - name: Validate Composer package
+        run: composer validate --strict
+
+      - name: Verify SQLite PDO driver
+        run: php -r "exit(in_array('sqlite', PDO::getAvailableDrivers(), true) ? 0 : 1);"
+
+      - name: Install dependencies
+        run: composer install --no-interaction --prefer-dist --no-progress
+
+      - name: Run PHPUnit
+        run: composer test
