@@ -2,6 +2,15 @@
 
 All notable changes to WilyCode Database Driver PDO are documented here.
 
+## [Unreleased]
+
+### Changed
+
+- Renamed the Composer package to `wilycode/database-pdo`.
+- Switched the shared contracts dependency to `wilycode/database`.
+- Retained the existing `WilyCode\Database\DriverPdo\` PHP namespace.
+- Declared `replace` for `wilycode/database-driver-pdo` at matching versions.
+
 ## [0.1.0] - 2026-10-13
 
 ### Added
