@@ -1,12 +1,12 @@
 {
-    "name": "wilycode/database-driver-pdo",
-    "description": "PDO database driver implementing WilyCode database contracts, with a query parameter binder.",
+    "name": "wilycode/database-pdo",
+    "description": "PDO database driver and canonical query binder for PHP.",
     "type": "library",
     "license": "MIT",
     "require": {
         "php": "^8.4",
         "ext-pdo": "*",
-        "wilycode/database-driver": "^0.1",
+        "wilycode/database": "^0.1",
         "wilycode/database-query": "^0.1"
     },
     "require-dev": {
@@ -76,12 +76,15 @@
         "query-binding",
         "wilycode"
     ],
-    "homepage": "https://github.com/wilycode/database-driver-pdo",
+    "homepage": "https://github.com/wilycode/database-pdo",
     "support": {
-        "issues": "https://github.com/wilycode/database-driver-pdo/issues",
-        "source": "https://github.com/wilycode/database-driver-pdo"
+        "issues": "https://github.com/wilycode/database-pdo/issues",
+        "source": "https://github.com/wilycode/database-pdo"
     },
     "config": {
         "sort-packages": true
+    },
+    "replace": {
+        "wilycode/database-driver-pdo": "self.version"
     }
 }
