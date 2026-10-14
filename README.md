@@ -1,8 +1,8 @@
-# WilyCode Database Driver PDO
+# WilyCode Database PDO
 
 [![PHP 8.4+](https://img.shields.io/badge/PHP-8.4%2B-777BB4)](https://www.php.net/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Tests](https://github.com/wilycode/database-driver-pdo/actions/workflows/tests.yml/badge.svg)](https://github.com/wilycode/database-driver-pdo/actions/workflows/tests.yml)
+[![Tests](https://github.com/wilycode/database-pdo/actions/workflows/tests.yml/badge.svg)](https://github.com/wilycode/database-pdo/actions/workflows/tests.yml)
 
 **A lightweight PDO implementation of the WilyCode database driver contract, with a companion query parameter binder.**
 
@@ -16,7 +16,7 @@ Wrap a native `PDO` connection behind `DatabaseInterface`, execute parameterized
 
 ## Features
 
-- Implement `wilycode/database-driver`'s `DatabaseInterface` using PDO.
+- Implement `wilycode/database`'s `DatabaseInterface` using PDO.
 - Accept an existing `PDO` instance or create one with `PdoDatabase::connect()`.
 - Support named and zero-based positional SQL parameters with automatic basic type detection.
 - Return associative arrays for `fetch()` and `fetchAll()` even when PDO's default fetch mode is configured differently.
@@ -28,7 +28,7 @@ Wrap a native `PDO` connection behind `DatabaseInterface`, execute parameterized
 
 - PHP 8.4 or newer.
 - PHP `pdo` extension, plus a driver for your database (such as `pdo_mysql`, `pdo_pgsql`, or `pdo_sqlite`).
-- `wilycode/database-driver` `^0.1`.
+- `wilycode/database` `^0.1`.
 - `wilycode/database-query` `^0.1` (used by `PdoBinder`).
 
 Both WilyCode dependencies must be available to Composer before installation succeeds. The SQLite test suite additionally requires `pdo_sqlite`.
@@ -36,7 +36,7 @@ Both WilyCode dependencies must be available to Composer before installation suc
 ## Installation
 
 ```bash
-composer require wilycode/database-driver-pdo
+composer require wilycode/database-pdo
 ```
 
 ## Quick start
@@ -155,9 +155,9 @@ try {
 
 | Package | Purpose |
 | --- | --- |
-| [`wilycode/database-driver`](https://github.com/wilycode/database-driver) | Shared database driver contract and exceptions |
+| [`wilycode/database`](https://github.com/wilycode/database) | Shared database driver contract and exceptions |
 | [`wilycode/database-query`](https://github.com/wilycode/database-query) | Compiled query, parameter types, and binder contract |
-| [`wilycode/database-driver-mysqli`](https://github.com/wilycode/database-driver-mysqli) | Alternative driver based on MySQLi |
+| [`wilycode/database-mysqli`](https://github.com/wilycode/database-mysqli) | Alternative driver based on MySQLi |
 
 Each package is versioned and installed independently.
 
@@ -173,7 +173,7 @@ The integration tests use SQLite in memory and require `pdo_sqlite`. GitHub Acti
 
 ## Contributing
 
-Issues and pull requests are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) and the [issue tracker](https://github.com/wilycode/database-driver-pdo/issues).
+Issues and pull requests are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) and the [issue tracker](https://github.com/wilycode/database-pdo/issues).
 
 ## License
 
